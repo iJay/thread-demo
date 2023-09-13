@@ -1,6 +1,7 @@
-package org.example.www;
+package org.example.www.threaddemo1;
 
-public class ThreadDemo1{
+
+public class Demo{
     public static void main(String[] args) {
         MyThread myThread1 = new MyThread();
         MyThread myThread2 = new MyThread();
@@ -13,14 +14,5 @@ public class ThreadDemo1{
         // run方法直接调用相当于普通方法的调用，并未开启新的线程。
         // myThread1.run();
         // myThread2.run();
-    }
-}
-
-class MyThread extends Thread{
-    @Override
-    public void run(){
-       for (int i = 0; i < 100; i++) {
-           System.out.println("线程" + this.getId() + ":" + i);
-       }
     }
 }

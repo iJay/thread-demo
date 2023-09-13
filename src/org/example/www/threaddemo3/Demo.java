@@ -1,9 +1,8 @@
-package org.example.www;
+package org.example.www.threaddemo3;
 
-import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;
 
-public class ThreadDemo3 {
+public class Demo {
     public static void main(String[] args) {
         long id = Thread.currentThread().getId();
         System.out.println("主线程" + id);
@@ -37,19 +36,7 @@ public class ThreadDemo3 {
         }
 
         // 启动线程，调用参数对象中的run方法
-         thread1.start();
-         thread2.start();
-    }
-}
-
-class MyCallable implements Callable<Integer> {
-    @Override
-    public Integer call() throws Exception {
-        long id = Thread.currentThread().getId();
-        for (int i = 0; i < 100; i++) {
-            System.out.println("线程" + id + ":" + i);
-        }
-        // 返回值表示线程执行的结果
-        return 200;
+        thread1.start();
+        thread2.start();
     }
 }
